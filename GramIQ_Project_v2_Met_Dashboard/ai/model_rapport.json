@@ -1,0 +1,76 @@
+{
+  "features": [
+    "product_code",
+    "stuk_gewicht",
+    "gewicht",
+    "pct_vol",
+    "stuks",
+    "verbruik_10",
+    "verbruik_30",
+    "verbruik_60",
+    "verbruik_120",
+    "verbruik_vandaag",
+    "uur",
+    "weekdag",
+    "min_tot_sluiting",
+    "min_sinds_bijvulling",
+    "baseline_min"
+  ],
+  "marges": {
+    "grenzen": [
+      0,
+      10,
+      20,
+      40,
+      80,
+      160,
+      10000
+    ],
+    "factoren": [
+      [
+        0.545593661734886,
+        1.8315262920531787
+      ],
+      [
+        0.41924980394169303,
+        2.1262822027115007
+      ],
+      [
+        0.5002668107574167,
+        1.9726584507056222
+      ],
+      [
+        0.5591718942028915,
+        1.7845641403013033
+      ],
+      [
+        0.5653640118930467,
+        1.58034183401382
+      ],
+      [
+        0.5,
+        1.5
+      ]
+    ]
+  },
+  "Validatie (synthetisch, ongezien)": {
+    "rijen": 11214,
+    "MAE_model_min": 16.571686470189995,
+    "MAE_baseline_min": 57.30507105854581,
+    "MAE_model_niet_leeg": 19.212162719561913,
+    "MAE_baseline_niet_leeg": 66.73285176186239,
+    "MAE_model_binnen_60min": 11.81160040097648,
+    "MAE_baseline_binnen_60min": 36.83683017342753,
+    "dekking_marge": 0.7998038166577492
+  },
+  "Test (echte kassaperiode)": {
+    "rijen": 5159,
+    "MAE_model_min": 14.818865028631501,
+    "MAE_baseline_min": 45.610069144918555,
+    "MAE_model_niet_leeg": 16.972899501206385,
+    "MAE_baseline_niet_leeg": 52.475169487470595,
+    "MAE_model_binnen_60min": 10.810739811953553,
+    "MAE_baseline_binnen_60min": 31.433112412558206,
+    "dekking_marge": 0.8177941461523551
+  }
+}
