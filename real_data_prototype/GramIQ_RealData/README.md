@@ -4,6 +4,8 @@ Zelfde opzet als `GramIQ_Project_v2_Met_Dashboard` (simulator → MQTT → backe
 AI en database → React-dashboard), maar de klanten komen nu uit **878.503 echte
 verkooptransacties** van een supermarkt, in plaats van uit verzonnen data.
 
+**Wat betekent alles op het dashboard?** Zie [UITLEG_DASHBOARD.md](UITLEG_DASHBOARD.md).
+
 ## De dataset
 
 **Supermarket Sales Data**, Kaggle: <https://www.kaggle.com/datasets/yapwh1208/supermarket-sales-data>

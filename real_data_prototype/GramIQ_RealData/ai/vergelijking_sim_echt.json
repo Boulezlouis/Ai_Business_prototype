@@ -1,0 +1,49 @@
+{
+  "trainrijen": 182208,
+  "A_echt": {
+    "test_echt": {
+      "MAE_min": 81.16710678510195,
+      "MAE_bak_laag_min": 49.55395314641581,
+      "MAE_baseline_min": 122.6415242367559,
+      "MAE_baseline_bak_laag_min": 80.92354210147404,
+      "zegt_30_60_echt_mediaan": 49.9666666666667,
+      "bias_min": -15.082413634571466,
+      "rijen": 110437
+    },
+    "test_gesimuleerd": {
+      "MAE_min": 73.9124234241583,
+      "MAE_bak_laag_min": 36.882209354750124,
+      "MAE_baseline_min": 137.93928439718692,
+      "MAE_baseline_bak_laag_min": 65.48376618942716,
+      "zegt_30_60_echt_mediaan": 46.16666666666663,
+      "bias_min": 9.74602659180925,
+      "rijen": 45324
+    }
+  },
+  "B_gesimuleerd": {
+    "test_echt": {
+      "MAE_min": 121.25609815026793,
+      "MAE_bak_laag_min": 53.406235321111296,
+      "MAE_baseline_min": 122.6415242367559,
+      "MAE_baseline_bak_laag_min": 80.92354210147404,
+      "zegt_30_60_echt_mediaan": 53.01666666666665,
+      "bias_min": -74.45697974105592,
+      "rijen": 110437
+    },
+    "test_gesimuleerd": {
+      "MAE_min": 67.45078132633292,
+      "MAE_bak_laag_min": 37.29239424048062,
+      "MAE_baseline_min": 137.93928439718692,
+      "MAE_baseline_bak_laag_min": 65.48376618942716,
+      "zegt_30_60_echt_mediaan": 46.51666666666665,
+      "bias_min": -9.124204287795346,
+      "rijen": 45324
+    }
+  },
+  "label_verdeling": {
+    "echt_test_mediaan": 368.3166666666666,
+    "sim_test_mediaan": 241.42500000000007,
+    "echt_aandeel_label_600": 0.2727075165026214,
+    "sim_aandeel_label_600": 0.05776189215426705
+  }
+}
