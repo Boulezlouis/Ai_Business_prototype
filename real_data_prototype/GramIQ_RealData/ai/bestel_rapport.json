@@ -1,0 +1,117 @@
+{
+  "features": [
+    "categorie_code",
+    "weekdag",
+    "maand",
+    "dag_van_maand",
+    "lag1",
+    "lag2",
+    "lag7",
+    "gem7",
+    "gem14",
+    "gem28",
+    "std7",
+    "zelfde_weekdag_gem4",
+    "aangeboden_7",
+    "dagen_sinds_verkoop",
+    "korting_gem7",
+    "verkoopprijs_lag1",
+    "inkoopprijs",
+    "inkoopprijs_rel28"
+  ],
+  "kwantiel": 0.8,
+  "validatie (jul-dec 2022)": {
+    "alle_producten": {
+      "dagen": 3683,
+      "MAE_model_kg": 7.086221859458712,
+      "MAE_vorige_week_kg": 9.93756094216671,
+      "MAE_gem7_kg": 8.391015929689823,
+      "gem_verkoop_kg": 18.86862231876188,
+      "genoeg_met_bestelling": 0.736899266901982,
+      "gem_bestelling_kg": 24.867204791442663
+    },
+    "bak 01 Broccoli": {
+      "dagen": 176,
+      "MAE_model_kg": 8.915178778602677,
+      "MAE_vorige_week_kg": 12.946158617424242,
+      "MAE_gem7_kg": 11.100298741883119,
+      "gem_verkoop_kg": 32.16624431818182,
+      "genoeg_met_bestelling": 0.75,
+      "gem_bestelling_kg": 41.88306409700599
+    },
+    "bak 02 Lotuswortel": {
+      "dagen": 166,
+      "MAE_model_kg": 12.111393861456962,
+      "MAE_vorige_week_kg": 16.27915431726908,
+      "MAE_gem7_kg": 14.939144391853127,
+      "gem_verkoop_kg": 35.01365662650602,
+      "genoeg_met_bestelling": 0.6927710843373494,
+      "gem_bestelling_kg": 43.57288346328634
+    },
+    "bak 03 Aubergine": {
+      "dagen": 113,
+      "MAE_model_kg": 4.562834933249532,
+      "MAE_vorige_week_kg": 5.740870501474926,
+      "MAE_gem7_kg": 5.226394310998735,
+      "gem_verkoop_kg": 8.738362831858407,
+      "genoeg_met_bestelling": 0.7610619469026548,
+      "gem_bestelling_kg": 13.149184413339187
+    },
+    "bak 04 Groene paprika": {
+      "dagen": 175,
+      "MAE_model_kg": 11.264006242172552,
+      "MAE_vorige_week_kg": 17.890296190476192,
+      "MAE_gem7_kg": 14.883178421768706,
+      "gem_verkoop_kg": 34.09283428571428,
+      "genoeg_met_bestelling": 0.72,
+      "gem_bestelling_kg": 42.23462369147363
+    }
+  },
+  "test (jan-jun 2023)": {
+    "alle_producten": {
+      "dagen": 4474,
+      "MAE_model_kg": 4.672574574269006,
+      "MAE_vorige_week_kg": 6.553895589330949,
+      "MAE_gem7_kg": 5.487180592098261,
+      "gem_verkoop_kg": 14.679173446580242,
+      "genoeg_met_bestelling": 0.7796155565489495,
+      "gem_bestelling_kg": 19.952042890784057
+    },
+    "bak 01 Broccoli": {
+      "dagen": 175,
+      "MAE_model_kg": 4.998136904690842,
+      "MAE_vorige_week_kg": 7.811379904761904,
+      "MAE_gem7_kg": 6.4203824897959185,
+      "gem_verkoop_kg": 19.243142857142857,
+      "genoeg_met_bestelling": 0.8285714285714286,
+      "gem_bestelling_kg": 26.305194690681873
+    },
+    "bak 02 Lotuswortel": {
+      "dagen": 175,
+      "MAE_model_kg": 4.815040346250818,
+      "MAE_vorige_week_kg": 6.695545523809524,
+      "MAE_gem7_kg": 5.9310472925170075,
+      "gem_verkoop_kg": 14.694680000000002,
+      "genoeg_met_bestelling": 0.8057142857142857,
+      "gem_bestelling_kg": 20.242201079255874
+    },
+    "bak 03 Aubergine": {
+      "dagen": 180,
+      "MAE_model_kg": 4.496375601503665,
+      "MAE_vorige_week_kg": 6.339115740740741,
+      "MAE_gem7_kg": 5.651583333333333,
+      "gem_verkoop_kg": 15.688005555555556,
+      "genoeg_met_bestelling": 0.7555555555555555,
+      "gem_bestelling_kg": 20.318803805356254
+    },
+    "bak 04 Groene paprika": {
+      "dagen": 180,
+      "MAE_model_kg": 6.691398540041218,
+      "MAE_vorige_week_kg": 10.874609259259259,
+      "MAE_gem7_kg": 8.979095105820107,
+      "gem_verkoop_kg": 25.648694444444445,
+      "genoeg_met_bestelling": 0.8444444444444444,
+      "gem_bestelling_kg": 33.12546702524482
+    }
+  }
+}

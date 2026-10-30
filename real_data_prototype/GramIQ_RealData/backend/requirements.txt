@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+paho-mqtt==1.6.1
+numpy
+pandas
+scikit-learn
+joblib

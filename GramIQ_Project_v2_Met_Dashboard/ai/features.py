@@ -97,9 +97,12 @@ class BakHistoriek:
       enkel DALINGEN tellen (bijvullen telt niet als 'negatief verbruik').
     """
 
-    def __init__(self, bak_id: str):
+    def __init__(self, bak_id: str, product: dict | None = None, product_code: int | None = None):
+        """`product` (stuk_gewicht, capaciteit) en `product_code` komen live uit de
+        database; zonder argumenten (training) uit de vaste PRODUCTEN-lijst."""
         self.bak_id = bak_id
-        self.p = PRODUCTEN[bak_id]
+        self.p = product if product is not None else PRODUCTEN[bak_id]
+        self.product_code = product_code if product is not None else PRODUCT_CODE.get(bak_id)
         self.ruw = deque(maxlen=MEDIAAN_VENSTER)
         self.gefilterd = None
         self.laatste_t = None
@@ -182,7 +185,7 @@ class BakHistoriek:
         basis_snelheid = v[60] if v[60] > 0 else verbruik_vandaag
         baseline = min(g / basis_snelheid, MAX_HORIZON_MIN) if basis_snelheid > 0 else MAX_HORIZON_MIN
         return {
-            "product_code": PRODUCT_CODE[self.bak_id],
+            "product_code": self.product_code,
             "stuk_gewicht": stuk,
             "gewicht": g,
             "pct_vol": 100 * g / cap,

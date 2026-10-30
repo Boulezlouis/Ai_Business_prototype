@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+# te groot voor git (52 MB) -> zelf downloaden van Kaggle, zie README
+data/annex2.csv
+# gegenereerd
+data/samples_echt.csv.gz
+data/gramiq.db
+data/*.db-wal
+data/*.db-shm

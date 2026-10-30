@@ -1,3 +1,6 @@
 node_modules/
 __pycache__/
 data/training_synthetisch.csv
+data/gramiq.db
+data/*.db-wal
+data/*.db-shm

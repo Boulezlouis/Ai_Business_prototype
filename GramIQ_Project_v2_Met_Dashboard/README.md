@@ -91,8 +91,37 @@ De backend filtert de korte pieken weg met een mediaanfilter (laatste 7 metingen
   | Bak leeg binnen 1 uur | 10,8 min | 31,4 min |
   | Echte waarde binnen de foutmarge | 81% | – |
 
+## Database (SQLite)
+
+De backend bewaart alles in `data/gramiq.db` (wordt automatisch aangemaakt bij de
+eerste start; ander pad via de omgevingsvariabele `GRAMIQ_DB`). Geen extra server
+nodig: SQLite zit standaard in Python. Schema in `backend/database.py`.
+
+| Tabel | Inhoud |
+|---|---|
+| `producten` | naam, stukgewicht (+ spreiding), capaciteit van een volle bak, per tros, productcode voor de AI |
+| `weegschalen` | id (= bak_id uit het MQTT-topic), naam, gekoppeld product, tarra, actief, laatst gezien |
+| `metingen` | per ontvangen meting: weegschaal, product, tijdstip, ruw gewicht, gefilterd gewicht, % vol, stuks |
+| `voorspellingen` | één AI-voorspelling per weegschaal per minuut (leeg over x min, marge, methode, verbruik) |
+
+* Bij de eerste start worden de drie bakken (07 Tomaten, 08 Appels, 09 Bananen) als
+  producten + weegschalen ingevuld. Daarna is de database de bron, niet meer de code.
+* Een onbekende weegschaal die metingen stuurt, wordt automatisch geregistreerd
+  (zonder product). Zolang er geen product gekoppeld is, worden metingen genegeerd.
+* Na een herstart van de backend worden filter, verbruik, dashboard en grafiek
+  hersteld uit de metingen van de laatste dag.
+* Dezelfde meting twee keer ontvangen (bv. de simulator opnieuw starten) geeft geen
+  dubbele rij: (weegschaal, tijdstip) is uniek.
+* Schrijven gebeurt gebundeld in een aparte thread (max. ±1 s vertraging).
+* Grootte: ±25.000 metingen per dag voor 3 bakken ≈ 5 MB per dag.
+
+Opnieuw beginnen? Stop de backend en verwijder `data/gramiq.db`.
+
 * **Backend-API**:
   * `GET /api/bakken` → gewicht, % vol, stuks, status en `voorspelling`
     (`minuten`, `leeg_om`, `leeg_vroegst`, `leeg_laatst`, `verbruik_g_per_min`)
-  * `GET /api/historiek/{bak_id}` → gewicht + voorspelling per minuut (laatste 4 u)
+  * `GET /api/historiek/{bak_id}?uren=4` → gewicht + voorspelling per minuut (uit de database)
+  * `GET /api/metingen/{bak_id}?van=...&tot=...&limiet=1000` → ruwe opgeslagen metingen
+  * `GET /api/producten`, `GET /api/weegschalen` → configuratie uit de database
+  * `GET /api/database` → pad, grootte en aantallen per tabel
   * `GET /api/model` → evaluatierapport van het model
